@@ -31,8 +31,9 @@ currently supported:
 * [GitOps-based deployment using Flux](/delivery/flux/README.md)
 * [GitOps-based deployment using ArgoCd](/delivery/ArgoCD/README.md)
 * [Canary releases via Argo Rollouts](/delivery/ArgoRollout/README.md)
-* [Helm-based operator deployment](/delivery/podtato-operator/README.md)
+* [Progressive Delivery via Flagger](/delivery/flagger/README.md)
 * [Multi-Stage delivery with Keptn](/delivery/keptn/README.md)
+* [Helm-based operator deployment](/delivery/podtato-operator/README.md)
 * [CNAB with Porter air-gapped deployment](/delivery/CNABwithPorter/README.md)
 
 Use cases supported going foward:
