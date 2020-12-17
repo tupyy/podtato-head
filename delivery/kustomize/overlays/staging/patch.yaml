@@ -1,0 +1,11 @@
+# patch.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: podtatohead
+spec:
+  template:
+    spec:
+      containers:
+      - name: server
+        image: yogeek/podtatohead:v0.1.1

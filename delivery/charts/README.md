@@ -16,7 +16,7 @@ If you do not have Helm 3 installed :
 ## Installing the Chart
 
 The chart is currently available via Git in a local directory. To install the
-chart first checkout the source code, open a terminal, and move to the delivery
+chart first checkout the source code, open a terminal, and move to the `delivery/charts`
 sub-directory. Then run
 
 ```
@@ -35,8 +35,8 @@ You can view it in your browser:
 * or by getting its external IP (if service has been set to 'type=LoadBalancer' in `values.yaml`) :
 
 ```
-SVC_IP=$(kubectl -n podtato-helm get service hs-podtatohead -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
-SVC_PORT=$(kubectl -n podtato-helm get service hs-podtatohead -o jsonpath='{.spec.ports[0].port}')
+SVC_IP=$(kubectl -n podtato-helm get service ph-podtatohead -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+SVC_PORT=$(kubectl -n podtato-helm get service ph-podtatohead -o jsonpath='{.spec.ports[0].port}')
 xdg-open http://${SVC_IP}:${SVC_PORT}
 ```
 
@@ -72,20 +72,23 @@ The installation can be customized by changing the following paramaters:
 
 To update the application version, you can choose one of the following methods :
 
-* update the `image.tag` value in `values.yaml` (set the value to `v0.1.1`) and run `helm upgrade -i ph podtatohead` again
 * run `helm upgrade -i ph podtatohead -n podtato-helm --set image.tag=v0.1.1 --wait --timeout 20s`
+* update the `image.tag` value in `values.yaml` (set the value to `v0.1.1`) and run `helm upgrade -i ph podtatohead` again
 
 A new revision is then installed.
 
-You can view it in your browser :
+Refresh your browser to see the new version !
 
-* either by using `./exposeService.sh`
-* or by getting its external IP (if service has been set to 'type=LoadBalancer' in `values.yaml`) :
+You can update the revision again in order to have a complete history in the first step.
 
 ```
-SVC_IP=$(kubectl -n podtato-helm get service hs-podtatohead -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
-SVC_PORT=$(kubectl -n podtato-helm get service hs-podtatohead -o jsonpath='{.spec.ports[0].port}')
-xdg-open http://${SVC_IP}:${SVC_PORT}
+helm upgrade -i ph podtatohead -n podtato-helm --set image.tag=v0.1.2 --wait --timeout 20s
+```
+
+## Check revision history
+
+```
+helm history ph -n podtato-helm
 ```
 
 ## Rollback to a previous version
@@ -93,15 +96,16 @@ xdg-open http://${SVC_IP}:${SVC_PORT}
 To rollback to a previous revision, run :
 
 ```
-# Check revision history
-helm history ph -n podtato-helm
-
-# Rollback to the revision 1
 helm rollback ph 1 -n podtato-helm
+```
 
-# Check the revision
+Check the revision
+
+```
 helm status ph -n podtato-helm
 ```
+
+Refresh your browser to see the first version is back.
 
 ## Uninstall the chart
 

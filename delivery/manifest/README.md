@@ -28,8 +28,6 @@ Your app is running at : http://localhost:9000
 ./getIP.sh
 ```
 
-Your app is running at : http://[SVC_IP]:9000
-
 ## Update
 
 Update the image tag in `manifest.yaml` file and run `kubectl apply -f manifest.yaml` again.

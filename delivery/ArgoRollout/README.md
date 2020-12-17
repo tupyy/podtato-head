@@ -26,7 +26,7 @@ kubectl argo rollouts version
 
 ```
 kubectl create ns demospace-argo
-helm install hs-rollout . -n demospace-argo
+helm install ph-rollout . -n demospace-argo
 ```
 
 ## Find our current rollout with the command line
@@ -44,7 +44,7 @@ kubectl argo rollouts get rollout podtatohead-demo  -w -n demospace-argo
 ## Update the release in the values file
 
 ```
-helm upgrade hs-rollout . -n demospace-argo --set image.tag=v0.1.2
+helm upgrade ph-rollout . -n demospace-argo --set image.tag=v0.1.2
 ```
 
 ## Manually promote the rollout after the first canary steps
