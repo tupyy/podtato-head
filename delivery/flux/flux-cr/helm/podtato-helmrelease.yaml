@@ -1,0 +1,19 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: podtato
+  namespace: default
+spec:
+  interval: 30s
+  chart:
+    spec:
+      # chart must be the relative path the chart can be found at in the GitRepository
+      chart: ./delivery/charts/podtatohead
+      # GitRepository where to fetch the content of the chart
+      sourceRef:
+        kind: GitRepository
+        name: podtato-chart
+        namespace: flux-system
+  # The chart values can be defined directly in this file
+  values:
+    replicaCount: 2

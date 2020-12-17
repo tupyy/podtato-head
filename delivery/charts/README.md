@@ -111,6 +111,7 @@ Refresh your browser to see the first version is back.
 
 ```
 helm uninstall ph -n podtato-helm
+kubectl delete namespace podtato-helm
 ```
 
 ## Notes

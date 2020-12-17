@@ -2,6 +2,9 @@
 
 https://docs.flagger.app/tutorials/istio-progressive-delivery
 
+To see what are the different deployment strategies and how they are managed by Flagger :
+https://docs.flagger.app/usage/deployment-strategies
+
 ## Installation
 
 _NOTE : you have to be into `delivery/flagger` folder to run the commands below._

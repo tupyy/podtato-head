@@ -6,5 +6,5 @@ metadata:
 spec:
   interval: 1m0s
   ref:
-    branch: training
+    branch: main
   url: https://github.com/yogeek/podtatohead

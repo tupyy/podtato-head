@@ -1,0 +1,20 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: podtato-chart
+  namespace: flux-system
+spec:
+  interval: 1m
+  # url can be any HTTP/S or SSH address (the latter requiring authentication).
+  url: https://github.com/yogeek/podtato-head
+  # The ref defines the checkout strategy, and is set to follow the main branch in the above example. 
+  # For other strategies like tags or commits, see the GitRepository CRD docs.
+  ref:
+    branch: main
+  # The ignore defines file and folder exclusion for the artifact produced, and follows the .gitignore pattern format.
+  # The above example only includes the ./delivery/charts directory of the repository and omits all other files.
+  ignore: |
+    # exclude all
+    /*
+    # include charts directory
+    !/delivery/charts
