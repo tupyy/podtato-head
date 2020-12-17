@@ -1,5 +1,7 @@
 # Delivering the example with a canary release using ArgoCD
 
+_NOTE : you have to be into `delivery/ArgoRollout` folder to run the commands below._
+
 ## Install Argo Rollout
 
 You can install [Argo Rollouts](https://argoproj.github.io/argo-rollouts/concepts/#concepts) to your cluster by following the [documentation](https://argoproj.github.io/argo-rollouts/installation/#installation).

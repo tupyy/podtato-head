@@ -1,5 +1,7 @@
 # Delivering the example using Keptn
 
+_NOTE : you have to be into `delivery/keptn` folder to run the commands below._
+
 ## Installing prerequisites
 
 * Install Prerequisites (Kubernetes, Istio)

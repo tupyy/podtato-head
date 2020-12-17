@@ -1,5 +1,7 @@
 # Porter
 
+_NOTE : you have to be into `delivery/CNABwithPorter` folder to run the commands below._
+
 ## Install
 
 ```

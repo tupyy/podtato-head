@@ -8,6 +8,8 @@ Apply changes safely and predictably, watching resources as they converge.
 
 ## Basic usages
 
+_NOTE : you have to be into `delivery/kapp` folder to run the commands below._
+
 ### Deploy from a directory
 
 - Deploy an application :

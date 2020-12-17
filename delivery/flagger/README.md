@@ -4,10 +4,14 @@ https://docs.flagger.app/tutorials/istio-progressive-delivery
 
 ## Installation
 
+_NOTE : you have to be into `delivery/flagger` folder to run the commands below._
+
 ### Install Istio
 
+Istio should have been installed in the SETUP.md steps.
+
 ```
-./setup/install-istio.sh
+istioctl verify-install
 ```
 
 ### Install Flagger

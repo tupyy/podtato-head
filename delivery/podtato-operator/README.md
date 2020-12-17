@@ -1,5 +1,7 @@
 # Delivering the example using a Helm-based operator
 
+_NOTE : you have to be into `delivery/podtato-operator` folder to run the commands below._
+
 ## Preparation steps
 
 * [Install the operator sdk](https://docs.openshift.com/container-platform/4.1/applications/operator_sdk/osdk-getting-started.html#osdk-installing-cli_osdk-getting-started)

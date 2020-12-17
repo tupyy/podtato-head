@@ -1,5 +1,7 @@
 # Delivery using [Flux](https://toolkit.fluxcd.io/get-started/)
 
+_NOTE : you have to be into `delivery/flux` folder to run the commands below._
+
 ## Install Flux
 
 ### Install CLI

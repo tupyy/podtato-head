@@ -2,6 +2,8 @@
 
 ## Prerequisites
 
+_NOTE : you have to be into `delivery/ArgoCD` folder to run the commands below._
+
 ### Install ArgoCD
 
 You can find detailed instructions on how to install ArgoCD [here](https://argoproj.github.io/argo-cd/getting_started/)
