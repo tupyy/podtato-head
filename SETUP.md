@@ -10,6 +10,7 @@ Clone your repository :
 export GITHUB_USER=toto
 git clone https://github.com/${GITHUB_USER}/podtato-head/
 cd podtato-head
+export ROOT_DIR=$(pwd)
 ```
 
 Replace all "yogeek" occurencces by your github username.
@@ -86,6 +87,7 @@ This mechanism is used to expose services inside the cluster using an external L
 To achieve a similar feature, [MetalLB](https://metallb.universe.tf/installation/) can be used.
 
 ```
+cd ${ROOT_DIR}
 ./setup/metal-lb/install.sh
 ```
 
@@ -96,22 +98,17 @@ Now, every `LoadBalancer` service will have an external IP assigned automaticall
 Istio is used by progessive delivery tools (Flagger, Argo Rollouts...).
 
 ```
+# Install Istio
 ./setup/istio/install.sh
+
+# Check install
+istioctl verify-install
+
+# Install addons
 ./setup/istio/addons.sh
 ```
 
-## Local tools
-
-```
-# Helm 3
-./setup/charts/setup/install.sh
-
-# Kustomize
-./setup/kustomize/setup/install.sh
-
-# Kapp
-./setup/kapp/setup/install.sh
-```
+_Warning: If you see errors like 'unable to recognize `STDIN": no matches for kind "MonitoringDashboard"`, run the `addons.sh` script a second time ([details](https://istio.io/latest/docs/setup/getting-started/#dashboard))_
 
 ## Useful tools
 
@@ -121,6 +118,16 @@ Istio is used by progessive delivery tools (Flagger, Argo Rollouts...).
 curl https://i.jpillora.com/txn2/kubefwd! | sudo bash
 kubefwd version
 ```
+
+You can now expose all services in a namespace under their DNS names with:
+
+```
+sudo kubefwd services -c $KUBECONFIG -n istio-system
+```
+
+You can now see Kiali and Prometheus in your browser :
+- http://kiali:20001
+- http://prometheus:9090
 
 ## MAGIC SHORTCUT : Load preconfigured cluster from backup
 
