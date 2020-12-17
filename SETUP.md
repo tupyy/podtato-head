@@ -4,6 +4,14 @@
 
 Fork the https://github.com/yogeek/podtato-head/ in your GitHub account.
 
+Clone your repository :
+
+```
+export GITHUB_USER=toto
+git clone https://github.com/${GITHUB_USER}/podtato-head/
+cd podtato-head
+```
+
 Replace all "yogeek" occurencces by your github username.
 Either your IDE "find/replace all" feature or a sed :
 
@@ -15,7 +23,7 @@ find . -type f -not -path "./.git/*" | xargs grep -l yogeek | xargs sed -i 's/yo
 Commit and push
 
 ```
-git add -A && git commit "init repo" && git push origin master
+git add -A && git commit -m "init repo" && git push -u origin main
 ```
 
 ## Build images locally
