@@ -51,6 +51,23 @@ This will put everything in values into the CRD. You can find an example in ```.
 
 ### Seeing things in action
 
+Your new Cutome Resource is deplyed :
+
+```
+kubectl get podtatoheads.podtatohead-demo.podtatohead
+```
+
+The controller detects the creation of the Custom Resource and deploys the resources defined in the operator (helm chart).
+
+```
+OPERATOR_POD_NAME=$(kubectl -n podtato-operator-system get po -l control-plane=controller-manager -o name)
+kubectl -n podtato-operator-system logs -f ${OPERATOR_POD_NAME} manager
+```
+
+```
+kubectl get all
+```
+
 ### Cleaning up
 
 ```

@@ -78,3 +78,9 @@ You can see a service has been onboarded in Keptn UI.
 
 Click on the service to see the different deployment stages.
 You can see a manual approval is needed : accept to finish the promotion.
+
+## Uninstall Keptn
+
+```
+keptn uninstall
+```
