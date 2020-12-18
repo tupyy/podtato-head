@@ -24,12 +24,14 @@ operator-sdk version
 
 ### Creating the operatior project
 
-Running ```initProject.sh``` will setup the basics for the operator. This script
-is just executing the following operator sdk command
+Running ```initProject.sh``` will setup the basics for the operator.
+
+This script is just executing the following operator sdk command:
 
 ```operator-sdk init --plugins=helm --domain=podtatohead--group=podtatohead-demo --version=v1alpha1 --helm-chart ../charts/```
-Which creates a Helm-based operator based on the helm charts example. This will
-put everything in values into the CRD. You can find an example in ```./config/samples/```
+
+Which creates a Helm-based operator based on the helm charts example.
+This will put everything in values into the CRD. You can find an example in ```./config/samples/```
 
 ### Building the operator image
 
