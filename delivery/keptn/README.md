@@ -9,12 +9,7 @@ _NOTE : you have to be into `delivery/keptn` folder to run the commands below._
 
 For your convenience, commands are listed below :
 
-Install Istio :
-
-```
-curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.6.5 sh -
-./istio-1.6.5/bin/istioctl install
-```
+Install Istio (already done)
 
 Install Keptn CLI :
 
@@ -50,18 +45,27 @@ You can now login into Keptn portal.
 
 ## Deployment
 
+All the keptn configuration is in the `shipyard.yaml` file.
+
 ### Create Project
 
 ```
 ./initProject.sh create-project
 ````
 
+You can see a new project has been created in Keptn UI.
+You have also see the 3 environments declared in the `shipyard.yaml` file.
+
 ### Onboard Service
+
 ```
 ./initProject.sh onboard-service
 ````
 
+You can see a service has been onboarded in Keptn UI.
+
 ### Deploy Service (new-artifact)
+
 ```
 ./initProject.sh first-deploy-service
 ````
@@ -71,3 +75,6 @@ You can now login into Keptn portal.
 ```
 ./initProject.sh upgrade-service
 ````
+
+Click on the service to see the different deployment stages.
+You can see a manual approval is needed : accept to finish the promotion.
