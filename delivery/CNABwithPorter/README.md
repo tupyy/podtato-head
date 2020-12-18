@@ -10,6 +10,10 @@ _NOTE : you have to be into `delivery/CNABwithPorter` folder to run the commands
 
 ## CNAB over an airgap
 
+[Porter](https://porter.sh/) allows you to package your application artifact, client tools, configuration and deployment logic together as a versioned bundle that you can distribute, and then install with a single command
+
+All this configuration is declared in a Bundle file : `./porter.yaml`
+
 1. Make any changes necessary to your bundle's source files and build it.
 
     ```
@@ -19,14 +23,14 @@ _NOTE : you have to be into `delivery/CNABwithPorter` folder to run the commands
 1. Publish the bundle to a registry. You can change where the bundle is published with the `--tag` flag.
 
     ```
-    porter publish --tag mydockeruser/podtatohead-porter:v0.1.0
+    porter publish --tag yogeek/podtatohead-porter:v0.1.0
     ```
 
 1. Archive the bundle to create a tgz file containing the bundle _and_ any images referenced by
     the bundle from the `images` section of the porter.yaml.
 
     ```
-    porter archive podtatohead.tgz --tag mydockeruser/podtatohead-porter:v0.1.0
+    porter archive podtatohead.tgz --tag yogeek/podtatohead-porter:v0.1.0
     ```
 
 1. Move the tgz file across the airgap, using removable media such as a USB stick or CD.
