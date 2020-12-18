@@ -42,7 +42,7 @@ flux check
 
 ```
 # Replace by your username to point to YOUR fork of the "podtatohead" project
-export GITHUB_USER="yogeek" 
+export GITHUB_USER="tupyy" 
 
 flux create source git podtato \
   --url="https://github.com/${GITHUB_USER}/podtato-head" \
@@ -285,7 +285,7 @@ From here, you can commit your applications flux manifests in a `apps` directory
 mkdir -p manifests/apps/podtato
 
 flux create source git podtato \
-  --url="https://github.com/yogeek/podtato-head" \
+  --url="https://github.com/tupyy/podtato-head" \
   --branch="main" \
   --interval=1m \
   --export | tee manifests/apps/podtato/podtato-app.yaml

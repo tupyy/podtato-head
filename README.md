@@ -15,9 +15,9 @@ application delivery. It - for sure - will grow over time. Right now you get the
 * A helm chart for the service and the deployment.
 * Three container images showing different versions
 
-  * yogeek/podtatohead:v0.1.0
-  * yogeek/podtatohead:v0.1.1
-  * yogeek/podtatohead:v0.1.2
+  * tupyy/podtatohead:v0.1.0
+  * tupyy/podtatohead:v0.1.1
+  * tupyy/podtatohead:v0.1.2
 
 ## Scenarios and Use Cases you can test with this repository
 

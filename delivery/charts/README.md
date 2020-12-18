@@ -45,7 +45,7 @@ The installation can be customized by changing the following paramaters:
 | Parameter                       | Description                                                     | Default                      |
 | ------------------------------- | ----------------------------------------------------------------| -----------------------------|
 | `replicaCount`                  | Number of replicas of the container                             | `1`                          |
-| `image.repository`              | Podtato Head Container image name                               | `yogeek/podtatohead`|
+| `image.repository`              | Podtato Head Container image name                               | `tupyy/podtatohead`|
 | `image.tag`                     | Podtato Head image tag                                          | `v0.1.2`                     |
 | `image.pullPolicy`              | Podtato Head Container pull policy                              | `IfNotPresent`               |
 | `imagePullSecrets`              | Podtato Head Pod pull secret                                    | ``                           |

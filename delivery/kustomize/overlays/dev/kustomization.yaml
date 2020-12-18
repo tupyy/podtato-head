@@ -11,5 +11,5 @@ resources:
 # You can also point to a remote base with its URL
 # https://github.com/kubernetes-sigs/kustomize/blob/master/examples/remoteBuild.md#url-format
 # resources:
-#   - github.com/yogeek/podtato-head/delivery/kustomize/base
+#   - github.com/tupyy/podtato-head/delivery/kustomize/base
 #   - namespace.yaml

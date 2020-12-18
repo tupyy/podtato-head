@@ -72,7 +72,7 @@ porter install
 Use the `--tag` to install a published bundle:
 
 ```
-porter install podtatohead-demo --tag yogeek/podtatohead-porter:v0.1.0
+porter install podtatohead-demo --tag tupyy/podtatohead-porter:v0.1.0
 ```
 
 ## Uninstalling the bundle

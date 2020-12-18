@@ -68,7 +68,7 @@ have ArgoCD take care of namespace management.
 Use the Github repo you forked before and ensure you set the path to ```
 delivery/charts/podtatohead```. This will use the Helm of the tutorial
 
-![Define GitHub Repo to use](images/argoGithub-yogeek.png)
+![Define GitHub Repo to use](images/argoGithub-tupyy.png)
 
 #### Define destination cluster
 
@@ -83,7 +83,7 @@ namespace``` above ArgoCD will create the namespace for us.
 ArgoCD will automatically detect the Helm values files. We do not need to change
 anything here and just can leave it as it.
 
-![Helm Values](images/argoHelm-yogeek.png)
+![Helm Values](images/argoHelm-tupyy.png)
 
 #### Create application
 

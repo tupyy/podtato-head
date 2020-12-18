@@ -6,7 +6,7 @@ metadata:
 spec:
   interval: 1m
   # url can be any HTTP/S or SSH address (the latter requiring authentication).
-  url: https://github.com/yogeek/podtato-head
+  url: https://github.com/tupyy/podtato-head
   # The ref defines the checkout strategy, and is set to follow the main branch in the above example. 
   # For other strategies like tags or commits, see the GitRepository CRD docs.
   ref:

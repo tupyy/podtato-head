@@ -8,4 +8,4 @@ spec:
     spec:
       containers:
       - name: server
-        image: yogeek/podtatohead:v0.1.2
+        image: tupyy/podtatohead:v0.1.2

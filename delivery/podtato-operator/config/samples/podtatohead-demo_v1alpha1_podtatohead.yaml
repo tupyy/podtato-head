@@ -4,6 +4,6 @@ metadata:
   name: podtatohead-sample
 spec:
   # Default values copied from <project_dir>/helm-charts/podtatohead/values.yaml
-  imageName: yogeek/podtatohead:v0.1.1
+  imageName: tupyy/podtatohead:v0.1.1
   
   

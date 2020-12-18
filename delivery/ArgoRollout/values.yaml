@@ -5,7 +5,7 @@
 replicaCount: 5
 
 image:
-  repository: yogeek/podtatohead
+  repository: tupyy/podtatohead
   tag: v0.1.0
   pullPolicy: Always
 
