@@ -29,6 +29,16 @@ kubectl create ns demospace-argo
 helm install ph-rollout . -n demospace-argo
 ```
 
+Check resources :
+
+```
+kubectl get all -n demospace-argo
+kubectl get rollouts.argoproj.io -n demospace-argo
+```
+
+A `Rollout` resource has been deployed along with the other resources of the chart.
+A copy of the `Rollout` resource is visible at `./sample/rollout.yaml`
+
 ## Find our current rollout with the command line
 
 ```
@@ -37,8 +47,10 @@ kubectl argo rollouts list rollouts -n demospace-argo
 
 ## Watch the current rollout on the command line
 
+Keep the following command running in a separate terminal to follow the rollout evolution :
+
 ```
-kubectl argo rollouts get rollout podtatohead-demo  -w -n demospace-argo
+kubectl argo rollouts get rollout ph-rollout-podtatohead-demo  -w -n demospace-argo
 ```
 
 ## Update the release in the values file
@@ -47,8 +59,16 @@ kubectl argo rollouts get rollout podtatohead-demo  -w -n demospace-argo
 helm upgrade ph-rollout . -n demospace-argo --set image.tag=v0.1.2
 ```
 
+Look at the rollout watched in the other terminal : a canary is started and paused, as defined in the rollout yaml definition.
+To continue, you will have to promote it manually on the next step.
+
 ## Manually promote the rollout after the first canary steps
 
 ```
-kubectl argo rollouts promote podtatohead-demo -n demospace-argo
+kubectl argo rollouts promote ph-rollout-podtatohead-demo -n demospace-argo
 ```
+
+Observe the rollout evolution to progressively switch from the current revision to the new revision, by adjusting the pods in the two replicasets and routing the traffic from one to the other.
+Once the rollout is finished, the revision 2 is stable, and the revision 1 is scaled down to 0.
+
+_Note: In a GitOps spirit, our rollout manifest should of course be saved in your git repository to be synchronized by ArgoCD of Flux !_

@@ -1,0 +1,54 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: hs-rollout-podtatohead-demo
+  labels:
+    app: podtatohead-demo
+    chart: podtatohead-demo-0.1.0
+    release: hs-rollout
+    heritage: Helm
+spec:
+  replicas: 5
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: podtatohead-demo
+      release: hs-rollout
+  strategy:
+     canary:
+    #blueGreen:
+      # activeService: hs-rollout-podtatohead-demo
+      # previewService: hs-rollout-podtatohead-demo-preview
+       steps:
+       - setWeight: 20
+       - pause: {}
+       - setWeight: 40
+       - pause: {duration: 10}
+       - setWeight: 60
+       - pause: {duration: 10}
+       - setWeight: 80
+       - pause: {duration: 10}      
+  template:
+    metadata:
+      labels:
+        app: podtatohead-demo
+        release: hs-rollout
+    spec:
+      containers:
+        - name: podtatohead-demo
+          image: "yogeek2/podtatohead:v0.1.0"
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 9000
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 9000
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 9000
+          resources:
+            {}

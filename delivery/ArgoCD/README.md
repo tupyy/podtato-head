@@ -23,6 +23,7 @@ sudo chmod +x /usr/local/bin/argocd
 ```
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+kubectl rollout status deployment argocd-server -n argocd
 ```
 
 Please follow the rest of the documentation to
@@ -30,11 +31,11 @@ Please follow the rest of the documentation to
 - [expose your the ArgoCD UI](https://argoproj.github.io/argo-cd/getting_started/#3-access-the-argo-cd-api-server)
 - [get access](https://argoproj.github.io/argo-cd/getting_started/#4-login-using-the-cli) by retrieving the password
 
+Example to connect to the UI : `kubectl -n argocd port-forward svc/argocd-server 8080:80`
+
 ### Fork the podtatohead project
 
-This example modifies files within the repository, so you will need your own
-fork. The original podtato head repository can be found
-[here](https://github.com/cncf/podtatohead)
+This example modifies files within the repository, so you will need to work on your fork.
 
 ## Setting up the application in ArgoCD
 
@@ -67,7 +68,7 @@ have ArgoCD take care of namespace management.
 Use the Github repo you forked before and ensure you set the path to ```
 delivery/charts/podtatohead```. This will use the Helm of the tutorial
 
-![Define GitHub Repo to use](images/argoGithub.png)
+![Define GitHub Repo to use](images/argoGithub-yogeek.png)
 
 #### Define destination cluster
 
@@ -82,7 +83,7 @@ namespace``` above ArgoCD will create the namespace for us.
 ArgoCD will automatically detect the Helm values files. We do not need to change
 anything here and just can leave it as it.
 
-![Helm Values](images/argoHelm.png)
+![Helm Values](images/argoHelm-yogeek.png)
 
 #### Create application
 
@@ -96,7 +97,7 @@ application will show up yellow as it has not been synced yet.
 
 ### Syncing the project
 
-In order to sync and deploy the application click ```sync```.
+In order to sync and deploy the application click ```SYNC``` and then confirm by clicking on ```SYNCHRONIZE```.
 
 ![syncing the application](images/argoSynchronize.png)
 
